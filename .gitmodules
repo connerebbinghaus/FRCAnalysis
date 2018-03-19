@@ -1,0 +1,6 @@
+[submodule "/deps/FANN"]
+	path = /deps/FANN
+	url = https://github.com/libfann/fann.git
+[submodule "/deps/curlpp"]
+	path = /deps/curlpp
+	url = https://github.com/jpbarrette/curlpp.git

@@ -8,9 +8,11 @@
 #ifndef TBAAPI_HPP_
 #define TBAAPI_HPP_
 #include <string>
+#include <map>
 #include <sstream>
 #include <iostream>
 #include <fstream>
+#include <chrono>
 #include "json.hpp"
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -31,11 +33,20 @@ public:
 	TBAApi(const std::string& url) : subUrl(url) {}
 	nlohmann::json get() const
 	{
-		curlpp::Easy request;
+
 		const std::string url(TBABaseUrl + subUrl);
 		const std::string cachefilename(replaceChar(subUrl, '/', '_') + ".cache");
 		//std::cout << cachefilename << std::endl;
 
+		if(cache_control.count(subUrl) > 0 && cache_control.at(subUrl) < std::chrono::system_clock::now())
+		{
+			std::ifstream cachefile(cachefilename);
+			nlohmann::json ret;
+			cachefile >> ret;
+			return ret;
+		}
+
+		curlpp::Easy request;
 		request.setOpt<curlpp::options::Url>(url);
 
 		std::list<std::string> headers;
@@ -67,7 +78,7 @@ public:
 		}
 		else
 		{
-			std::cerr << "Request failed: Response was " << curlpp::Infos::ResponseCode::get(request) << std::endl;
+			std::cerr << "Request for " << url << " failed: Response was " << curlpp::Infos::ResponseCode::get(request) << std::endl;
 		}
 
 		std::ifstream cachefile(cachefilename);
@@ -98,6 +109,8 @@ private:
 	}
 
 	const std::string subUrl;
+
+	static std::map<std::string, std::chrono::system_clock::time_point> cache_control;
 };
 
 
