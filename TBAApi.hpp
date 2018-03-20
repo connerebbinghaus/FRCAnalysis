@@ -38,14 +38,6 @@ public:
 		const std::string cachefilename(replaceChar(subUrl, '/', '_') + ".cache");
 		//std::cout << cachefilename << std::endl;
 
-		if(cache_control.count(subUrl) > 0 && cache_control.at(subUrl) < std::chrono::system_clock::now())
-		{
-			std::ifstream cachefile(cachefilename);
-			nlohmann::json ret;
-			cachefile >> ret;
-			return ret;
-		}
-
 		curlpp::Easy request;
 		request.setOpt<curlpp::options::Url>(url);
 
@@ -109,8 +101,6 @@ private:
 	}
 
 	const std::string subUrl;
-
-	static std::map<std::string, std::chrono::system_clock::time_point> cache_control;
 };
 
 

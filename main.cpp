@@ -53,9 +53,11 @@ int main() {
 					output[0] = match["alliances"]["blue"]["score"];
 					output[1] = match["alliances"]["red"]["score"];
 					std::cout << "#";
+					std::cout.flush();
 					data.push_back(std::make_pair(input, output));
 				} catch (...) {
 					std::cout << "X";
+					std::cout.flush();
 				}
 			}
 		}
