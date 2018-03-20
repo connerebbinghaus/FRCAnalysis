@@ -61,7 +61,7 @@ int main() {
 				}
 			}
 		}
-		std::cout << std::endl << "Training..." << std::endl;
+		std::cout << std::endl << "Training... ";
 		FANN::training_data tData;
 		double* inputs[data.size()];
 		double* outputs[data.size()];
@@ -73,7 +73,8 @@ int main() {
 			i++;
 		}
 		tData.set_train_data(data.size(), 24, (double**)inputs, 2, (double**)outputs);
-		nnet.train_epoch(tData);
+		double error = nnet.train_epoch(tData);
+		std::cout << "Error: " << error << std::endl;
 		for(unsigned int j = 0; j < data.size(); j++)
 		{
 			delete[] inputs[j];
