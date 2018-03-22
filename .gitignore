@@ -2,3 +2,4 @@
 /Release/
 /*.cache
 /gmon.out
+/Release Profiling/

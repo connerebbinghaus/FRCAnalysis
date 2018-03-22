@@ -13,6 +13,7 @@
 #include <iostream>
 #include <fstream>
 #include <chrono>
+#include <string_view>
 #include "json.hpp"
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -55,9 +56,23 @@ public:
 		request.setOpt<curlpp::options::HttpHeader>(headers);
 
 		std::stringstream buf;
+		std::map<std::string, std::string> recvHeaders;
 		request.setOpt<curlpp::options::WriteStream>(&buf);
+		request.setOpt<curlpp::options::HeaderFunction>([&recvHeaders](char *buffer, size_t size, size_t nitems) {
+			std::string_view data(buffer, size*nitems);
+			auto colon = data.find_first_of(':');
+			std::string_view name = data.substr(0, colon);
+			std::string_view value = data.substr(data.find_first_not_of(' ', colon+1), data.find_last_not_of(' '));
+			recvHeaders[std::string(name)] = std::string(value);
+			return size*nitems;
+		});
 		request.setOpt<curlpp::options::SslVerifyPeer>(false); // SECURE!!!
 		request.perform();
+
+		if(recvHeaders.count("Cache-Control")!=0)
+		{
+			std::cout << recvHeaders["Cache-Control"] << std::endl;
+		}
 
 		if(curlpp::Infos::ResponseCode::get(request) == 200)
 		{
