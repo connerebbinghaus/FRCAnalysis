@@ -26,11 +26,11 @@ int main()
 				{
 					static unsigned int neurons = 0;
 					neurons++;
-					std::cout << std::setw(4) << "Neurons: " << termcolor::yellow << neurons << "(" << max_epochs << " max) " << termcolor::reset << "Error: " << termcolor::red << net.get_MSE() << " (" << desired_error << " desired.) " << termcolor::reset << "Epochs: " << termcolor::magenta << epochs << termcolor::reset << std::endl;
+					std::cout << "Neurons: " << termcolor::yellow << std::setw(3) << neurons << " (" << max_epochs << " max) " << termcolor::reset << "Error: " << termcolor::red << std::setw(8) << net.get_MSE() << " (" << desired_error << " desired.) " << termcolor::reset << "Epochs: " << termcolor::magenta << epochs << termcolor::reset << std::endl;
 					return 0;
 				}, nullptr);
 	std::cout << termcolor::cyan << "Training..." << termcolor::reset << std::endl;
-	nnet.cascadetrain_on_data(tData, 15, 1, 0.015);
+	nnet.cascadetrain_on_data(tData, 250, 1, 0.015);
 	std::cout << termcolor::cyan << "Saving..." << termcolor::reset << std::endl;
 	nnet.save("nnet.out");
 	std::cout << termcolor::green << "Done!" << termcolor::reset << std::endl;
