@@ -11,3 +11,6 @@
 /Download_Release/
 /Train_Debug/
 /Train_Release/
+/cache.dat
+/data.dat
+/nnet.out
