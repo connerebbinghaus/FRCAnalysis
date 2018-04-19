@@ -3,3 +3,11 @@
 /*.cache
 /gmon.out
 /Release Profiling/
+/Download Debug/
+/Download Release/
+/Train Debug/
+/Train Release/
+/Download_Debug/
+/Download_Release/
+/Train_Debug/
+/Train_Release/
