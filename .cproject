@@ -60,7 +60,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="train.cpp|deps/FANN/lib|deps/FANN/examples|deps/FANN/VS2010|deps/FANN/tests|deps/FANN/src/parallel_floatfann_cpp.cpp|deps/FANN/src/parallel_fann.c|deps/FANN/src/parallel_fann_cpp.cpp|deps/FANN/src/parallel_doublefann_cpp.cpp|deps/FANN/src/floatfann.c|deps/FANN/src/fixedfann.c|deps/FANN/src/fann.c|deps/FANN/src/fann_train.c|deps/FANN/src/fann_train_data.c|deps/FANN/src/fann_io.c|deps/FANN/src/fann_error.c|deps/FANN/src/fann_cascade.c|deps/curlpp/examples" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="predict.cpp|train.cpp|deps/FANN/lib|deps/FANN/examples|deps/FANN/VS2010|deps/FANN/tests|deps/FANN/src/parallel_floatfann_cpp.cpp|deps/FANN/src/parallel_fann.c|deps/FANN/src/parallel_fann_cpp.cpp|deps/FANN/src/parallel_doublefann_cpp.cpp|deps/FANN/src/floatfann.c|deps/FANN/src/fixedfann.c|deps/FANN/src/fann.c|deps/FANN/src/fann_train.c|deps/FANN/src/fann_train_data.c|deps/FANN/src/fann_io.c|deps/FANN/src/fann_error.c|deps/FANN/src/fann_cascade.c|deps/curlpp/examples" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -127,7 +127,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="train.cpp|deps/FANN/VS2010|deps/FANN/tests|deps/FANN/lib|deps/FANN/examples|deps/FANN/src/parallel_floatfann_cpp.cpp|deps/FANN/src/parallel_fann.c|deps/FANN/src/parallel_fann_cpp.cpp|deps/FANN/src/parallel_doublefann_cpp.cpp|deps/FANN/src/floatfann.c|deps/FANN/src/fixedfann.c|deps/FANN/src/fann.c|deps/FANN/src/fann_train.c|deps/FANN/src/fann_train_data.c|deps/FANN/src/fann_io.c|deps/FANN/src/fann_error.c|deps/FANN/src/fann_cascade.c|deps/curlpp/examples" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="predict.cpp|train.cpp|deps/FANN/VS2010|deps/FANN/tests|deps/FANN/lib|deps/FANN/examples|deps/FANN/src/parallel_floatfann_cpp.cpp|deps/FANN/src/parallel_fann.c|deps/FANN/src/parallel_fann_cpp.cpp|deps/FANN/src/parallel_doublefann_cpp.cpp|deps/FANN/src/floatfann.c|deps/FANN/src/fixedfann.c|deps/FANN/src/fann.c|deps/FANN/src/fann_train.c|deps/FANN/src/fann_train_data.c|deps/FANN/src/fann_io.c|deps/FANN/src/fann_error.c|deps/FANN/src/fann_cascade.c|deps/curlpp/examples" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -192,7 +192,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="download.cpp|deps/FANN/lib|deps/FANN/examples|deps/FANN/VS2010|deps/FANN/tests|deps/FANN/src/parallel_floatfann_cpp.cpp|deps/FANN/src/parallel_fann.c|deps/FANN/src/parallel_fann_cpp.cpp|deps/FANN/src/parallel_doublefann_cpp.cpp|deps/FANN/src/floatfann.c|deps/FANN/src/fixedfann.c|deps/FANN/src/fann.c|deps/FANN/src/fann_train.c|deps/FANN/src/fann_train_data.c|deps/FANN/src/fann_io.c|deps/FANN/src/fann_error.c|deps/FANN/src/fann_cascade.c|deps/curlpp/examples" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="predict.cpp|download.cpp|deps/FANN/lib|deps/FANN/examples|deps/FANN/VS2010|deps/FANN/tests|deps/FANN/src/parallel_floatfann_cpp.cpp|deps/FANN/src/parallel_fann.c|deps/FANN/src/parallel_fann_cpp.cpp|deps/FANN/src/parallel_doublefann_cpp.cpp|deps/FANN/src/floatfann.c|deps/FANN/src/fixedfann.c|deps/FANN/src/fann.c|deps/FANN/src/fann_train.c|deps/FANN/src/fann_train_data.c|deps/FANN/src/fann_io.c|deps/FANN/src/fann_error.c|deps/FANN/src/fann_cascade.c|deps/curlpp/examples" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -259,7 +259,139 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="download.cpp|deps/FANN/VS2010|deps/FANN/tests|deps/FANN/lib|deps/FANN/examples|deps/FANN/src/parallel_floatfann_cpp.cpp|deps/FANN/src/parallel_fann.c|deps/FANN/src/parallel_fann_cpp.cpp|deps/FANN/src/parallel_doublefann_cpp.cpp|deps/FANN/src/floatfann.c|deps/FANN/src/fixedfann.c|deps/FANN/src/fann.c|deps/FANN/src/fann_train.c|deps/FANN/src/fann_train_data.c|deps/FANN/src/fann_io.c|deps/FANN/src/fann_error.c|deps/FANN/src/fann_cascade.c|deps/curlpp/examples" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="predict.cpp|download.cpp|deps/FANN/VS2010|deps/FANN/tests|deps/FANN/lib|deps/FANN/examples|deps/FANN/src/parallel_floatfann_cpp.cpp|deps/FANN/src/parallel_fann.c|deps/FANN/src/parallel_fann_cpp.cpp|deps/FANN/src/parallel_doublefann_cpp.cpp|deps/FANN/src/floatfann.c|deps/FANN/src/fixedfann.c|deps/FANN/src/fann.c|deps/FANN/src/fann_train.c|deps/FANN/src/fann_train_data.c|deps/FANN/src/fann_io.c|deps/FANN/src/fann_error.c|deps/FANN/src/fann_cascade.c|deps/curlpp/examples" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="cdt.managedbuild.config.gnu.mingw.exe.debug.799605043.2119583144">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.mingw.exe.debug.799605043.2119583144" moduleId="org.eclipse.cdt.core.settings" name="Predict_Debug">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.PE" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.mingw.exe.debug.799605043.2119583144" name="Predict_Debug" optionalBuildProperties="org.eclipse.cdt.docker.launcher.containerbuild.property.selectedvolumes=,org.eclipse.cdt.docker.launcher.containerbuild.property.volumes=" parent="cdt.managedbuild.config.gnu.mingw.exe.debug">
+					<folderInfo id="cdt.managedbuild.config.gnu.mingw.exe.debug.799605043.2119583144." name="/" resourcePath="">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.mingw.base.578298984" name="MinGW GCC" superClass="cdt.managedbuild.toolchain.gnu.mingw.base">
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.PE" id="cdt.managedbuild.target.gnu.platform.mingw.base.1374900177" name="Debug Platform" osList="win32" superClass="cdt.managedbuild.target.gnu.platform.mingw.base"/>
+							<builder buildPath="${workspace_loc:/FRCAnalysis}/Debug" id="cdt.managedbuild.tool.gnu.builder.mingw.base.13363544" keepEnvironmentInBuildfile="false" name="CDT Internal Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="cdt.managedbuild.tool.gnu.builder.mingw.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.assembler.mingw.base.1214681648" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.mingw.base">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.213531962" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.archiver.mingw.base.619796195" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.mingw.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.mingw.base.907833486" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.mingw.base">
+								<option id="gnu.cpp.compiler.option.include.paths.2094001723" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/deps/curlpp/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/deps/FANN/src/include}&quot;"/>
+								</option>
+								<option id="gnu.cpp.compiler.option.optimization.level.918494026" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.debugging.level.1918627478" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.other.other.1126713414" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" useByScannerDiscovery="false" value="-fopenmp -c -fmessage-length=0" valueType="string"/>
+								<option id="gnu.cpp.compiler.option.dialect.std.493024397" name="Language standard" superClass="gnu.cpp.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.cpp.compiler.dialect.default" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.debugging.gprof.554746056" name="Generate gprof information (-pg)" superClass="gnu.cpp.compiler.option.debugging.gprof" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="gnu.cpp.compiler.option.dialect.flags.2062351044" name="Other dialect flags" superClass="gnu.cpp.compiler.option.dialect.flags" useByScannerDiscovery="true" value="-std=c++17" valueType="string"/>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.874228518" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.compiler.mingw.base.1048361920" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.mingw.base">
+								<option id="gnu.c.compiler.option.include.paths.1837128654" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/deps/curlpp/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/deps/FANN/src/include}&quot;"/>
+								</option>
+								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.283100566" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.debugging.level.2019406093" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.max" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.misc.other.1735652930" name="Other flags" superClass="gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-fopenmp -c -fmessage-length=0" valueType="string"/>
+								<option id="gnu.c.compiler.option.debugging.gprof.40995722" name="Generate gprof information (-pg)" superClass="gnu.c.compiler.option.debugging.gprof" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.260276500" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.linker.mingw.base.539690676" name="MinGW C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.mingw.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.mingw.base.726733820" name="MinGW C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.mingw.base">
+								<option id="gnu.cpp.link.option.libs.961019370" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" useByScannerDiscovery="false" valueType="libs">
+									<listOptionValue builtIn="false" value="curl"/>
+								</option>
+								<option id="gnu.cpp.link.option.flags.808752536" name="Linker flags" superClass="gnu.cpp.link.option.flags" useByScannerDiscovery="false" value="-fopenmp" valueType="string"/>
+								<option id="gnu.cpp.link.option.debugging.gprof.115855165" name="Generate gprof information (-pg)" superClass="gnu.cpp.link.option.debugging.gprof" value="true" valueType="boolean"/>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.613229336" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry excluding="download.cpp|train.cpp|deps/FANN/lib|deps/FANN/examples|deps/FANN/VS2010|deps/FANN/tests|deps/FANN/src/parallel_floatfann_cpp.cpp|deps/FANN/src/parallel_fann.c|deps/FANN/src/parallel_fann_cpp.cpp|deps/FANN/src/parallel_doublefann_cpp.cpp|deps/FANN/src/floatfann.c|deps/FANN/src/fixedfann.c|deps/FANN/src/fann.c|deps/FANN/src/fann_train.c|deps/FANN/src/fann_train_data.c|deps/FANN/src/fann_io.c|deps/FANN/src/fann_error.c|deps/FANN/src/fann_cascade.c|deps/curlpp/examples" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="cdt.managedbuild.config.gnu.mingw.exe.release.1149662006.1241253882">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.mingw.exe.release.1149662006.1241253882" moduleId="org.eclipse.cdt.core.settings" name="Predict_Release">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.mingw.exe.release.1149662006.1241253882" name="Predict_Release" optionalBuildProperties="org.eclipse.cdt.docker.launcher.containerbuild.property.selectedvolumes=,org.eclipse.cdt.docker.launcher.containerbuild.property.volumes=" parent="cdt.managedbuild.config.gnu.mingw.exe.release">
+					<folderInfo id="cdt.managedbuild.config.gnu.mingw.exe.release.1149662006.1241253882." name="/" resourcePath="">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.base.1323060030" name="Linux GCC" nonInternalBuilderId="cdt.managedbuild.target.gnu.builder.base" superClass="cdt.managedbuild.toolchain.gnu.base">
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.GNU_ELF" id="cdt.managedbuild.target.gnu.platform.base.272208156" name="Debug Platform" osList="linux,hpux,aix,qnx" superClass="cdt.managedbuild.target.gnu.platform.base"/>
+							<builder autoBuildTarget="all" buildPath="${workspace_loc:/FRCAnalysis}/Release" cleanBuildTarget="clean" id="org.eclipse.cdt.build.core.internal.builder.241546936" incrementalBuildTarget="all" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="org.eclipse.cdt.build.core.internal.builder"/>
+							<tool id="cdt.managedbuild.tool.gnu.archiver.base.277185170" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
+							<tool command="g++" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" id="cdt.managedbuild.tool.gnu.cpp.compiler.base.1809754040" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.base">
+								<option id="gnu.cpp.compiler.option.include.paths.1216216562" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/deps/curlpp/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/deps/FANN/src/include}&quot;"/>
+								</option>
+								<option id="gnu.cpp.compiler.option.optimization.level.1044761328" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.most" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.debugging.level.1892351130" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.dialect.std.1696966417" name="Language standard" superClass="gnu.cpp.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.cpp.compiler.dialect.default" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.other.other.1578748786" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" useByScannerDiscovery="false" value="-fopenmp -c -fmessage-length=0 -fexceptions" valueType="string"/>
+								<option id="gnu.cpp.compiler.option.debugging.gprof.1545465443" name="Generate gprof information (-pg)" superClass="gnu.cpp.compiler.option.debugging.gprof" useByScannerDiscovery="false" value="false" valueType="boolean"/>
+								<option id="gnu.cpp.compiler.option.optimization.flags.877793591" name="Other optimization flags" superClass="gnu.cpp.compiler.option.optimization.flags" useByScannerDiscovery="false" value="-march=native -mtune=native -flto" valueType="string"/>
+								<option id="gnu.cpp.compiler.option.dialect.flags.606719329" name="Other dialect flags" superClass="gnu.cpp.compiler.option.dialect.flags" useByScannerDiscovery="true" value="-std=c++17" valueType="string"/>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1587794525" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.compiler.base.1361926676" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.base">
+								<option defaultValue="gnu.c.optimization.level.most" id="gnu.c.compiler.option.optimization.level.115087018" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.debugging.level.1561137272" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.none" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.include.paths.773608475" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/deps/curlpp/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/deps/FANN/src/include}&quot;"/>
+								</option>
+								<option id="gnu.c.compiler.option.misc.other.1261799302" name="Other flags" superClass="gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-fopenmp -c -fmessage-length=0 -fexceptions" valueType="string"/>
+								<option id="gnu.c.compiler.option.optimization.flags.1712225151" name="Other optimization flags" superClass="gnu.c.compiler.option.optimization.flags" useByScannerDiscovery="false" value="-march=native -mtune=native -flto" valueType="string"/>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1490022535" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.linker.base.245216695" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.base.425950813" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.base">
+								<option id="gnu.cpp.link.option.libs.1432621066" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
+									<listOptionValue builtIn="false" value="curl"/>
+								</option>
+								<option id="gnu.cpp.link.option.paths.2145783835" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths"/>
+								<option id="gnu.cpp.link.option.flags.1371563570" name="Linker flags" superClass="gnu.cpp.link.option.flags" useByScannerDiscovery="false" value="-fopenmp -flto -O3 -march=native -mtune=native -fexceptions" valueType="string"/>
+								<option id="gnu.cpp.link.option.debugging.gprof.1597678432" name="Generate gprof information (-pg)" superClass="gnu.cpp.link.option.debugging.gprof" useByScannerDiscovery="false" value="false" valueType="boolean"/>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.91662996" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.assembler.base.1126790976" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.base">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.724701971" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry excluding="download.cpp|train.cpp|deps/FANN/VS2010|deps/FANN/tests|deps/FANN/lib|deps/FANN/examples|deps/FANN/src/parallel_floatfann_cpp.cpp|deps/FANN/src/parallel_fann.c|deps/FANN/src/parallel_fann_cpp.cpp|deps/FANN/src/parallel_doublefann_cpp.cpp|deps/FANN/src/floatfann.c|deps/FANN/src/fixedfann.c|deps/FANN/src/fann.c|deps/FANN/src/fann_train.c|deps/FANN/src/fann_train_data.c|deps/FANN/src/fann_io.c|deps/FANN/src/fann_error.c|deps/FANN/src/fann_cascade.c|deps/curlpp/examples" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -289,16 +421,25 @@
 		<configuration configurationName="Train_Release">
 			<resource resourceType="PROJECT" workspacePath="/FRCAnalysis"/>
 		</configuration>
+		<configuration configurationName="Train_Debug"/>
 		<configuration configurationName="Train Debug">
-			<resource resourceType="PROJECT" workspacePath="/FRCAnalysis"/>
-		</configuration>
-		<configuration configurationName="Download Debug">
 			<resource resourceType="PROJECT" workspacePath="/FRCAnalysis"/>
 		</configuration>
 		<configuration configurationName="Train Release">
 			<resource resourceType="PROJECT" workspacePath="/FRCAnalysis"/>
 		</configuration>
 		<configuration configurationName="Release Profiling"/>
+		<configuration configurationName="Download_Release"/>
+		<configuration configurationName="Predict_Release">
+			<resource resourceType="PROJECT" workspacePath="/FRCAnalysis"/>
+		</configuration>
+		<configuration configurationName="Predict_Debug">
+			<resource resourceType="PROJECT" workspacePath="/FRCAnalysis"/>
+		</configuration>
+		<configuration configurationName="Download Debug">
+			<resource resourceType="PROJECT" workspacePath="/FRCAnalysis"/>
+		</configuration>
+		<configuration configurationName="Download_Debug"/>
 		<configuration configurationName="Debug">
 			<resource resourceType="PROJECT" workspacePath="/FRCAnalysis"/>
 		</configuration>

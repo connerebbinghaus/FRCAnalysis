@@ -14,3 +14,5 @@
 /cache.dat
 /data.dat
 /nnet.out
+/Predict_Release/
+/Predict_Debug/

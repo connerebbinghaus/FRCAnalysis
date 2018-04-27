@@ -20,7 +20,11 @@ int main()
 	nnet.set_train_stop_function(FANN::STOPFUNC_MSE);
 	FANN::training_data tData;
 	std::cout << termcolor::cyan << "Loading data..." << termcolor::reset << std::endl;
-	tData.read_train_from_file("data.dat");
+	if(!tData.read_train_from_file("data.dat"))
+	{
+		std::cout << termcolor::red << "Failed to read data!" << termcolor::reset << std::endl;
+		return 1;
+	}
 	nnet.init_weights(tData);
 	nnet.set_callback([](FANN::neural_net &net, FANN::training_data &train, unsigned int max_epochs, unsigned int epochs_between_reports, float desired_error, unsigned int epochs, void *user_data)
 				{
