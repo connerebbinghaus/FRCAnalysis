@@ -12,6 +12,12 @@
 #include "doublefann.h"
 #include "fann_cpp.h"
 
+void term_handler()
+{
+	std::cerr << "Something went terribly wrong." << std::endl;
+	std::abort();
+}
+
 struct Team {
 	std::string key;
 	int wins;
@@ -29,10 +35,10 @@ struct Team {
 class Event
 {
 public:
-	bool init(const std::string& eventKey)
+	void init(const std::string& eventKey)
 	{
 		std::vector<nlohmann::json> qualmatches;
-		auto matches = TBAApi("/event/" + eventKey + "/matches/simple").get();
+		auto matches = TBAApi("/event/" + eventKey + "/matches").get();
 		for(const auto& match : matches)
 		{
 			if(match["comp_level"] == "qm")
@@ -49,9 +55,14 @@ public:
 
 		for(const auto& match : qualmatches)
 		{
-			if(match["alliances"]["red"]["score"].is_null() || match["alliances"]["red"]["score"] == -1 || match["score_breakdown"].is_null())
+			if(!match["alliances"]["red"]["score"].is_number() || match["alliances"]["red"]["score"] == -1)
 			{
+				data.at(match["key"].get<std::string>()) = std::map(teamStates);
 				continue;
+			}
+			else if(match.count("score_breakdown") == 0 || !match["score_breakdown"].is_object())
+			{
+				throw std::runtime_error("Match " + match["key"].get<std::string>() + " has scores (meaning it has been played) but has no score breakdown. Rank calculations cannot continue.");
 			}
 			for(const auto& team : match["alliances"]["red"]["team_keys"])
 			{
@@ -133,6 +144,7 @@ public:
 				t.autoPts += match["score_breakdown"]["blue"]["autoPoints"].get<int>();
 				t.ownership += match["score_breakdown"]["blue"]["teleopOwnershipPoints"].get<int>();
 				t.vault += match["score_breakdown"]["blue"]["vaultPoints"].get<int>();
+				teamStates[team.get<std::string>()] = t;
 			}
 
 			std::vector<Team> Teams;
@@ -162,6 +174,7 @@ public:
 				{
 					return a.vault < b.vault;
 				}
+				return false;
 			});
 
 			int rankCount = 1;
@@ -173,14 +186,20 @@ public:
 				teamStates.at(t.key) = t;
 			}
 
-			data.at(match.get<std::string>()) = std::map(teamStates);
+			data[match["key"].get<std::string>()] = std::map(teamStates);
+
 		}
-		return true;
+		return;
 	}
 
 	Team getTeamStatusAtMatch(const std::string& team, const std::string& matchKey)
 	{
-		return data.at(matchKey).at(team);
+		auto& match = data.at(matchKey);
+		if(match.count(team) == 0)
+		{
+			throw std::runtime_error("No data available for team " + team + " for match " + matchKey + ". May be first match for team?");
+		}
+		return match.at(team);
 	}
 
 private:
@@ -189,6 +208,7 @@ private:
 
 int main()
 {
+	std::set_terminate(term_handler);
 	FANN::neural_net nnet("nnet.out");
 	std::cout << termcolor::cyan << "Getting list of events..." << termcolor::reset << std::endl;
 	const auto events = TBAApi("/events/2018/simple").get();
@@ -208,7 +228,7 @@ int main()
 
 	Event eventData;
 
-	std::future<bool> initResult = std::async(&Event::init, &eventData, eventKey);
+	std::future<void> initResult = std::async(&Event::init, &eventData, eventKey);
 
 	std::cout << termcolor::cyan << "Getting list of matches..." << termcolor::reset << std::endl;
 
@@ -240,38 +260,57 @@ int main()
 	auto match = TBAApi("/match/" + matchKey).get();
 
 	std::cout << termcolor::cyan << "Waiting for initialization job to complete..." << termcolor::reset << std::endl;
-	initResult.wait();
+	try {
+		initResult.get();
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << termcolor::red << "Initialization job failed with exception: " << e.what() << termcolor::reset << std::endl;
+		return 2;
+	}
 
 	double* input = new double[24];
 	unsigned int i = 0;
+	try{
+		for(const auto& team : match["alliances"]["blue"]["team_keys"]) // For every team on the blue alliance...
+		{
+			input[i] = eventData.getTeamStatusAtMatch(team.get<std::string>(), matchKey).wins;
+			input[i+1] = eventData.getTeamStatusAtMatch(team.get<std::string>(), matchKey).ties;
+			input[i+2] = eventData.getTeamStatusAtMatch(team.get<std::string>(), matchKey).losses;
+			input[i] /= input[i]+input[i+1]+input[i+2]; // Normalize data between 0 and 1.
+			input[i+1] /= input[i]+input[i+1]+input[i+2];
+			input[i+2] /= input[i]+input[i+1]+input[i+2];
+			input[i+3] = eventData.getTeamStatusAtMatch(team.get<std::string>(), matchKey).rank / 100.0;
+			i+=4;
+		}
 
-	for(const auto& team : match["alliances"]["blue"]["team_keys"]) // For every team on the blue alliance...
-	{
-		input[i] = eventData.getTeamStatusAtMatch(team.get<std::string>(), matchKey).wins;
-		input[i+1] = eventData.getTeamStatusAtMatch(team.get<std::string>(), matchKey).ties;
-		input[i+2] = eventData.getTeamStatusAtMatch(team.get<std::string>(), matchKey).losses;
-		input[i] /= input[i]+input[i+1]+input[i+2]; // Normalize data between 0 and 1.
-		input[i+1] /= input[i]+input[i+1]+input[i+2];
-		input[i+2] /= input[i]+input[i+1]+input[i+2];
-		input[i+3] = eventData.getTeamStatusAtMatch(team.get<std::string>(), matchKey).rank / 100.0;
-		i+=4;
+		for(const auto& team : match["alliances"]["red"]["team_keys"]) // For every team on the blue alliance...
+		{
+			input[i] = eventData.getTeamStatusAtMatch(team.get<std::string>(), matchKey).wins;
+			input[i+1] = eventData.getTeamStatusAtMatch(team.get<std::string>(), matchKey).ties;
+			input[i+2] = eventData.getTeamStatusAtMatch(team.get<std::string>(), matchKey).losses;
+			input[i] /= input[i]+input[i+1]+input[i+2]; // Normalize data between 0 and 1.
+			input[i+1] /= input[i]+input[i+1]+input[i+2];
+			input[i+2] /= input[i]+input[i+1]+input[i+2];
+			input[i+3] = eventData.getTeamStatusAtMatch(team.get<std::string>(), matchKey).rank / 100.0;
+			i+=4;
+		}
 	}
-
-	for(const auto& team : match["alliances"]["red"]["team_keys"]) // For every team on the blue alliance...
+	catch(const std::exception& e)
 	{
-		input[i] = eventData.getTeamStatusAtMatch(team.get<std::string>(), matchKey).wins;
-		input[i+1] = eventData.getTeamStatusAtMatch(team.get<std::string>(), matchKey).ties;
-		input[i+2] = eventData.getTeamStatusAtMatch(team.get<std::string>(), matchKey).losses;
-		input[i] /= input[i]+input[i+1]+input[i+2]; // Normalize data between 0 and 1.
-		input[i+1] /= input[i]+input[i+1]+input[i+2];
-		input[i+2] /= input[i]+input[i+1]+input[i+2];
-		input[i+3] = eventData.getTeamStatusAtMatch(team.get<std::string>(), matchKey).rank / 100.0;
-		i+=4;
+		std::cout << termcolor::red << "Failed getting team info: " << e.what() << termcolor::reset << std::endl;
+		return 3;
 	}
-
 	double* output = nnet.run(input);
 	std::cout << termcolor::cyan << "Prediction:" << termcolor::reset << std::endl;
-	std::cout << termcolor::red << output[1] << "\t" << termcolor::blue << output[0] << termcolor::reset << std::endl;
+	if(output[0] < 0)
+	{
+		std::cout << termcolor::red << "Red wins by " << -output[0]*600 << " points." << termcolor::reset << std::endl;
+	}
+	else
+	{
+		std::cout << termcolor::red << "Blue wins by " << output[0]*600 << " points." << termcolor::reset << std::endl;
+	}
 	return 0;
 }
 

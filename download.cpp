@@ -36,7 +36,7 @@ int main() {
 				static std::mutex printMutex;
 				const auto match = TBAApi("/match/" + matchKey.get<std::string>()).get(); // Download the match data.
 				double* input = new double[24];
-				double* output = new double[2];
+				double* output = new double[1];
 				unsigned int i = 0;
 				while(true)
 				{
@@ -79,8 +79,7 @@ int main() {
 
 
 
-							output[0] = match["alliances"]["blue"]["score"].get<double>()/600.0;
-							output[1] = match["alliances"]["red"]["score"].get<double>()/600.0;
+							output[0] = match["alliances"]["blue"]["score"].get<double>()/600.0 - match["alliances"]["red"]["score"].get<double>()/600.0;
 							blueScores.wait(); // Wait for the job to finish (because it is deferred, it actually runs now.)
 							redScores.wait();
 							printMutex.lock();
@@ -144,7 +143,7 @@ int main() {
 		i++;
 	}
 	//std::cout << std::endl << "Training... ";
-	tData.set_train_data(data.size(), 24, (double**)inputs, 2, (double**)outputs); // Give FANN the data.
+	tData.set_train_data(data.size(), 24, (double**)inputs, 1, (double**)outputs); // Give FANN the data.
 	tData.save_train("data.dat"); // Save the data/
 	std::cout << termcolor::green << "Done!" << termcolor::reset << std::endl;
 	for(unsigned int j = 0; j < data.size(); j++) // Clean up after ourselves.

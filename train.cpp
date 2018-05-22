@@ -15,7 +15,7 @@ int main()
 {
 	FANN::neural_net nnet;
 
-	nnet.create_shortcut(2, 24, 2);
+	nnet.create_shortcut(2, 24, 1);
 	nnet.set_training_algorithm(FANN::TRAIN_RPROP);
 	nnet.set_train_stop_function(FANN::STOPFUNC_MSE);
 	FANN::training_data tData;
